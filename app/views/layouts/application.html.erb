@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authfromscratch</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% flash.each do |k_msg, v_msg| %>
+	<%= content_tag :div, v_msg, id: "flash_#{k_msg}" %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
